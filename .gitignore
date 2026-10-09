@@ -69,6 +69,7 @@ Testing/
 .cache/
 
 .vs/
+
 x64/
 Debug/
 Release/
