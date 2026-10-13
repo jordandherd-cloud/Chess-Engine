@@ -16,12 +16,15 @@ char board[8][8] = {
 };
 int main()
 {
+
     sf::RenderWindow window(
         sf::VideoMode({ 600, 600 }),
         "Chess Engine"
     );
 
+   // sf::Texture texture("Textures/chess_piece_2_white_pawn.png");
 
+    sf::Texture texture("Textures/chess_piece_2_white_pawn.png");
     for (int row = 0; row < 8; row++)
     {
         for (int col = 0; col < 8; col++)
@@ -50,6 +53,8 @@ int main()
                     ? sf::Color(240, 217, 181)
                     : sf::Color(181, 136, 99));
                 window.draw(square);
+               
+               
             }
         }
 
