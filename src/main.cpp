@@ -25,9 +25,8 @@ int main()
         "Chess Engine"
     );
 
-   // sf::Texture texture("Textures/chess_piece_2_white_pawn.png");
-
-    sf::Texture pawn("Textures/chess_piece_2_white_pawn.png");
+    sf::Texture pawnW("Textures/chess_piece_2_white_pawn.png");
+    sf::Texture pawnB("Textures/chess_piece_2_black_pawn.png");
     for (int row = 0; row < 8; row++)
     {
         for (int col = 0; col < 8; col++)
@@ -61,11 +60,17 @@ int main()
                 char piece = board[row][col];
 
                 if (piece == 'P') {
-                    sf::Sprite pawn(pawn);
-                    pawn.setPosition({ col * size, row * size });
-                    window.draw(pawn);
-                }
+                    sf::Sprite pawnW(pawnW);
+                    pawnW.setPosition({ col * size, row * size });
+                    window.draw(pawnW);
+                } 
 
+                if (piece == 'p') {
+                    sf::Sprite pawnB(pawnB);
+                    pawnB.setPosition({ col * size, row * size });
+                    window.draw(pawnB);
+                }
+              
             }
         }
 
