@@ -14,6 +14,9 @@ char board[8][8] = {
     {'P','P','P','P','P','P','P','P'},
     {'R','N','B','Q','K','B','N','R'}   // row 7 = rank 1 (bottom of screen)
 };
+
+
+
 int main()
 {
 
@@ -24,7 +27,7 @@ int main()
 
    // sf::Texture texture("Textures/chess_piece_2_white_pawn.png");
 
-    sf::Texture texture("Textures/chess_piece_2_white_pawn.png");
+    sf::Texture pawn("Textures/chess_piece_2_white_pawn.png");
     for (int row = 0; row < 8; row++)
     {
         for (int col = 0; col < 8; col++)
@@ -38,7 +41,7 @@ int main()
         {
             if (event->is<sf::Event::Closed>())
                 window.close();
-        }
+        } 
 
         window.clear();
 
@@ -55,6 +58,14 @@ int main()
                 window.draw(square);
                
                
+                char piece = board[row][col];
+
+                if (piece == 'P') {
+                    sf::Sprite pawn(pawn);
+                    pawn.setPosition({ col * size, row * size });
+                    window.draw(pawn);
+                }
+
             }
         }
 
