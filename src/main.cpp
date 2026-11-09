@@ -25,23 +25,23 @@ int main()
         "Chess Engine"
     );
 
-    sf::Texture pawnB("Textures/chess_piece_2_black_pawn.png");
-    sf::Texture pawnW("Textures/chess_piece_2_white_pawn.png");
+    sf::Texture pawnB("Textures/b-pawn.png");
+    sf::Texture pawnW("Textures/w-pawn.png");
 
-    sf::Texture rookB("Textures/chess_piece_2_black_rook.png");
-    sf::Texture rookW("Textures/chess_piece_2_white_rook.png");
+    sf::Texture rookB("Textures/b-rook.png");
+    sf::Texture rookW("Textures/w-rook.png");
 
-    sf::Texture knightB("Textures/chess_piece_2_black_knight.png");
-    sf::Texture knightW("Textures/chess_piece_2_white_knight.png");
+    sf::Texture knightB("Textures/b-knight.png");
+    sf::Texture knightW("Textures/w-knight.png");
 
-    sf::Texture queenB("Textures/chess_piece_2_black_queen.png");
-    sf::Texture queenW("Textures/chess_piece_2_white_queen.png");
+    sf::Texture queenB("Textures/b-queen.png");
+    sf::Texture queenW("Textures/w-queen.png");
 
-    sf::Texture kingB("Textures/chess_piece_2_black_king.png");
-    sf::Texture kingW("Textures/chess_piece_2_white_king.png");
+    sf::Texture kingB("Textures/b-king.png");
+    sf::Texture kingW("Textures/w-king.png");
 
-    sf::Texture bishopB("Textures/chess_piece_2_black_bishop.png");
-    sf::Texture bishopW("Textures/chess_piece_2_white_bishop.png");
+    sf::Texture bishopB("Textures/b-bishop.png");
+    sf::Texture bishopW("Textures/w-bishop.png");
 
     for (int row = 0; row < 8; row++)
     {
@@ -76,75 +76,99 @@ int main()
                 char piece = board[row][col];
 
                 if (piece == 'P') {
-                    sf::Sprite pawnW(pawnW);
-                    pawnW.setPosition({ col * size, row * size });
-                    window.draw(pawnW);
+                    sf::Sprite WhitePawn(pawnW);
+                    float scale = size / pawnW.getSize().x;   // 75 / 480 = 0.15625
+                    WhitePawn.setScale({ scale, scale });
+                    WhitePawn.setPosition({ col * size, row * size });
+                    window.draw(WhitePawn);
                 } 
 
                 if (piece == 'p') {
-                    sf::Sprite pawnB(pawnB);
-                    pawnB.setPosition({ col * size, row * size });
-                    window.draw(pawnB);
+                    sf::Sprite BlackPawn(pawnB);
+                    float scale = size / pawnB.getSize().x;   // 75 / 480 = 0.15625
+                    BlackPawn.setScale({ scale, scale });
+                    BlackPawn.setPosition({ col * size, row * size });
+                    window.draw(BlackPawn);
                 }
               
                 if (piece == 'Q') {
-                    sf::Sprite queenW(queenW);
-                    queenW.setPosition({ col * size, row * size });
-                    window.draw(queenW);
+                    sf::Sprite WhiteQueen(queenW);
+                    float scale = size / queenW.getSize().x;   // 75 / 480 = 0.15625
+                    WhiteQueen.setScale({ scale, scale });
+                    WhiteQueen.setPosition({ col * size, row * size });
+                    window.draw(WhiteQueen);
                 }
 
                 if (piece == 'q') {
-                    sf::Sprite queenB(queenB);
-                    queenB.setPosition({ col * size, row * size });
-                    window.draw(queenB);
+                    sf::Sprite BlackQueen(queenB);
+                    float scale = size / queenW.getSize().x;   // 75 / 480 = 0.15625
+                    BlackQueen.setScale({ scale, scale });
+                    BlackQueen.setPosition({ col * size, row * size });
+                    window.draw(BlackQueen);
                 }
 
                 if (piece == 'K') {
-                    sf::Sprite kingW(kingW);
-                    kingW.setPosition({ col * size, row * size });
-                    window.draw(kingW);
+                    sf::Sprite WhiteKing(kingW);
+                    float scale = size / kingW.getSize().x;  
+                    WhiteKing.setScale({ scale, scale });
+                    WhiteKing.setPosition({ col * size, row * size });
+                    window.draw(WhiteKing);
                 }
 
                 if (piece == 'k') {
-                    sf::Sprite kingB(kingB);
-                    kingB.setPosition({ col * size, row * size });
-                    window.draw(kingB);
+                    sf::Sprite BlackKing(kingB);
+                    float scale = size / kingB.getSize().x;
+                    BlackKing.setScale({ scale, scale });
+                    BlackKing.setPosition({ col * size, row * size });
+                    window.draw(BlackKing);
                 }
 
                 if (piece == 'B') {
-                    sf::Sprite bishopW(bishopW);
-                    bishopW.setPosition({ col * size, row * size });
-                    window.draw(bishopW);
+                    sf::Sprite WhiteBishop(bishopW);
+                    float scale = size / bishopW.getSize().x;
+                    WhiteBishop.setScale({ scale, scale });
+                    WhiteBishop.setPosition({ col * size, row * size });
+                    window.draw(WhiteBishop);
                 }
 
                 if (piece == 'b') {
-                    sf::Sprite bishopB(bishopB);
-                    bishopB.setPosition({ col * size, row * size });
-                    window.draw(bishopB);
+                    sf::Sprite BlackBishop(bishopB);
+                    float scale = size / bishopB.getSize().x;
+                    BlackBishop.setScale({ scale, scale });
+                    BlackBishop.setPosition({ col * size, row * size });
+                    window.draw(BlackBishop);
                 } 
                 
                 if (piece == 'N') {
-                    sf::Sprite knightW(knightW);
-                    knightW.setPosition({ col * size, row * size });
-                    window.draw(knightW);
+                    sf::Sprite WhiteKnight(knightW);
+                    float scale = size / knightW.getSize().x;
+                    WhiteKnight.setScale({ scale, scale });
+                    WhiteKnight.setPosition({ col * size, row * size });
+                    window.draw(WhiteKnight);
                 }
 
                 if (piece == 'n') {
-                    sf::Sprite knightB(knightB);
-                    knightB.setPosition({ col * size, row * size });
-                    window.draw(knightB);
+                    sf::Sprite BlackKnight(knightB);
+                    float scale = size / knightB.getSize().x;
+                    BlackKnight.setScale({ scale, scale });
+                    BlackKnight.setPosition({ col * size, row * size });
+                    window.draw(BlackKnight);
                 }
                 
                 if (piece == 'R') {
-                    sf::Sprite rookW(rookW);
-                    rookW.setPosition({ col * size, row * size });
-                    window.draw(rookW);
+                    sf::Sprite WhiteRook(rookW);
+                    float scale = size / rookW.getSize().x;
+                    WhiteRook.setScale({ scale, scale });
+                    WhiteRook.setPosition({ col * size, row * size });
+                    window.draw(WhiteRook);
                 }
 
                 if (piece == 'r') {
-                    sf::Sprite rookB(rookB);
-                    rookB.setPosition({ col * size, row * size });
-                    window.draw(rookB);
+                    sf::Sprite BlackRook(rookB);
+                    float scale = size / rookB.getSize().x;
+                    BlackRook.setScale({ scale, scale });
+                    BlackRook.setPosition({ col * size, row * size });
+                    window.draw(BlackRook);
                 }
 
 

@@ -18,5 +18,7 @@ FetchContent_MakeAvailable(SFML)
 add_executable(ChessEngine src/main.cpp)
 target_link_libraries(ChessEngine PRIVATE SFML::Graphics)
 
-file(COPY ${CMAKE_SOURCE_DIR}/src/Textures
-     DESTINATION ${CMAKE_BINARY_DIR})
+add_custom_command(TARGET ChessEngine POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/src/Textures
+        ${CMAKE_BINARY_DIR}/Textures)
